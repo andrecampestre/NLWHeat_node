@@ -19,6 +19,12 @@ router.get("/messages/last3", new GetLast3MessagesController().handle);
 
 router.get("/profile", ensureAuthenticated, new ProfileUserController().handle);
 
+router.get("/", (req, res) => {
+  res.json({
+    msg: 'API Online'
+  })
+})
+
 router.get("/about", (req, res) => {
   res.json({
     name: 'Andre',

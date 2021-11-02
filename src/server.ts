@@ -1,5 +1,7 @@
 import { serverHttp } from "./app";
 
-serverHttp.listen(4000, () =>
-  console.log(`:rocket Server is running on port 4000`)
+const PORT = process.env.PORT || 4000;
+
+serverHttp.listen(PORT, () =>
+  console.log(`:rocket Server is running on port: ` + PORT)
 );
